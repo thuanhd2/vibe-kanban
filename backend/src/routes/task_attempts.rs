@@ -504,7 +504,9 @@ pub async fn open_task_attempt_in_editor(
     for arg in &editor_command[1..] {
         cmd.arg(arg);
     }
-    cmd.arg(&attempt.worktree_path);
+    // /private${worktree_path}
+    let worktree_path_with_private_prefix = format!("/private{}", attempt.worktree_path);
+    cmd.arg(&worktree_path_with_private_prefix);
 
     match cmd.spawn() {
         Ok(_) => {
@@ -512,7 +514,7 @@ pub async fn open_task_attempt_in_editor(
                 "Opened editor ({}) for task attempt {} at path: {}",
                 editor_command.join(" "),
                 task_attempt.id,
-                attempt.worktree_path
+                worktree_path_with_private_prefix
             );
             Ok(ResponseJson(ApiResponse::success(())))
         }

@@ -74,6 +74,7 @@ backend/bindings
 build-npm-package-codesign.sh
 
 npx-cli/dist
+npx-cli/*.tgz
 backend/db.sqlite
 
 # Development ports file
@@ -82,3 +83,4 @@ backend/db.sqlite
 dev_assets
 /frontend/.env.sentry-build-plugin
 .ssh
+

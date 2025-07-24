@@ -72,6 +72,8 @@ build-npm-package-codesign.sh
 npx-cli/dist
 npx-cli/vibe-kanban-*
 vibe-kanban-*.tgz
+npx-cli/*.tgz
+backend/db.sqlite
 
 # Development ports file
 .dev-ports.json

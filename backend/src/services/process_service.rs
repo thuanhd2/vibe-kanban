@@ -711,6 +711,7 @@ impl ProcessService {
             Some("charm-opencode") => crate::executor::ExecutorConfig::CharmOpencode,
             Some("sst-opencode") => crate::executor::ExecutorConfig::SstOpencode,
             Some("aider") => crate::executor::ExecutorConfig::Aider,
+            Some("codex") => crate::executor::ExecutorConfig::Codex,
             _ => crate::executor::ExecutorConfig::Echo, // Default for "echo" or None
         }
     }
